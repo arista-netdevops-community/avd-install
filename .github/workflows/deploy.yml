@@ -19,9 +19,13 @@ jobs:
         run: |
           cp install.sh docs/index.html
 
-      - name: Deploy 🚀
-        uses: appleboy/gh-pages-action@v0.0.2
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Add changes" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          remote_url: https://github.com/titom73/avd-install.git
+          github_token: ${{ secrets.GITHUB_TOKEN }}
