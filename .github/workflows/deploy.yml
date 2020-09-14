@@ -17,7 +17,7 @@ jobs:
 
       - name: Install and Build
         run: |
-          cp install.sh docs/index.html
+          cp install.sh webdocs/index.html
 
       - name: Commit files
         run: |
