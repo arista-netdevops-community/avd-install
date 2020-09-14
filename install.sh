@@ -1,13 +1,18 @@
 #!/bin/bash
+#
+# Purpose: AVD Installation script
+#          Available using https://get.avd.sh
+# Author: @titom73
+# Date: 2020-09-14
+# Version: 1
+# License: Apache 2.0
+# --------------------------------------
 
 # Local Installation Path
 _ROOT_INSTALLATION_DIR="${PWD}/arista-ansible"
 
-GITHUB_REPOSITORY="aristanetworks/ansible-avd"
-GITHUB_SHA="devel"
-
 # List of Arista Repositories
-_REPO_AVD="https://github.com/${GITHUB_REPOSITORY}.git"
+_REPO_AVD="https://github.com/aristanetworks/ansible-avd.git"
 _REPO_CVP="https://github.com/aristanetworks/ansible-cvp.git"
 _REPO_EXAMPLES="https://github.com/arista-netdevops-community/ansible-avd-cloudvision-demo"
 
@@ -46,8 +51,12 @@ if [ ! -d "${_ROOT_INSTALLATION_DIR}" ]; then
         exit 1
     fi
     echo ""
-    echo "Installtion done. You can access setup at ${_ROOT_INSTALLATION_DIR}"
-    echo ""
+    echo "Installtion done."
+    echo "You can access setup at ${_ROOT_INSTALLATION_DIR} to review all the files"
+    echo "You can login to AVD environment with:"
+    echo "   cd arista-ipspace"
+    echo "   make shell"
+    echo "For complete documentaiton, visit: https://www.avd.sh/docs/installation/setup-environement/"
 else
     echo "  ! local installation folder already exists - ${_ROOT_INSTALLATION_DIR}"
     exit 1
