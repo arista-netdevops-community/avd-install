@@ -20,7 +20,7 @@ jobs:
           cp install.sh docs/index.html
 
       - name: Deploy 🚀
-        uses: ./
+        uses: appleboy/gh-pages-action@v0.0.2
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
