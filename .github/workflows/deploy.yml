@@ -23,5 +23,5 @@ jobs:
         uses: appleboy/gh-pages-action@v0.0.2
         with:
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           remote_url: https://github.com/titom73/avd-install.git
