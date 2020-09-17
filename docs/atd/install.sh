@@ -26,7 +26,7 @@ _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/ansible-avd-cloudvision-demo"
 
 # BIN Paths
 _PIP_BIN=$(which pip)
-_PIP_OPTIONS="--disable-pip-version-check --quiet --upgrade --user"
+_PIP_OPTIONS="--disable-pip-version-check --quiet --upgrade"
 _CURL_BIN=$(which curl)
 _CURL_OPTIONS="-fsSL"
 
