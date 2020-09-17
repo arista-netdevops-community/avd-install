@@ -35,7 +35,7 @@ info_installation_done() {
     echo "You can login to AVD environment with:"
     echo "--------------------------------------"
     echo "   cd ${_ROOT_INSTALLATION_DIR}"
-    echo "   make shell"
+    echo "   make start"
     echo "--------------------------------------"
     echo ""
     echo "For complete documentaiton, visit: https://www.avd.sh/docs/installation/setup-environement/"
