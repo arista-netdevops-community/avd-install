@@ -10,6 +10,10 @@
 # License: Apache 2.0
 # --------------------------------------
 
+# Update PATH to match ATD Jumphost setting
+export PATH=$PATH:$HOME/.local/bin/
+export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.8/site-packages/
+
 # Local Installation Path
 _INSTALLATION_PATH="arista-ansible"
 _ROOT_INSTALLATION_DIR="${PWD}/${_INSTALLATION_PATH}"
