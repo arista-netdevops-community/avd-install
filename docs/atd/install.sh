@@ -109,12 +109,12 @@ else
     exit 1
 fi
 
-echo "  * Start python requirements installation"
-echo "    * Get requirements files from AVD repository"
-avd_get_req_files
+# echo "  * Start python requirements installation"
+# echo "    * Get requirements files from AVD repository"
+# avd_get_req_files
 #avd_python_provision
-echo "    * Provision virtual-env"
-avd_python_provision_venv
+# echo "    * Provision virtual-env"
+# avd_python_provision_venv
 
 echo "  * Deployed AVD environment"
 if [ ! -d "${_ROOT_INSTALLATION_DIR}" ]; then
