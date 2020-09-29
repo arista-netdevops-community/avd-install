@@ -32,7 +32,7 @@ _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/avd-atd-provisionner"
 _PIP_BIN=$(which pip3)
 # For SSH jumphost
 #_PIP_OPTIONS="--disable-pip-version-check --quiet --upgrade --use-feature=2020-resolver"
-_PIP_OPTIONS="--user --disable-pip-version-check --quiet --upgrade"
+_PIP_OPTIONS="--disable-pip-version-check --quiet --upgrade"
 _CURL_BIN=$(which curl)
 _CURL_OPTIONS="-fsSL"
 
@@ -79,7 +79,7 @@ avd_get_req_files() {
 avd_python_provision_venv() {
     _AVD_VENV="avd_venv"
     _PYTHON_PATH=$(which python3)
-    ${_PIP_BIN} install ${_PIP_OPTIONS} virtualenv
+    ${_PIP_BIN} install ${_PIP_OPTIONS} --user virtualenv
     virtualenv --clear -q -p ${_PYTHON_PATH} ${PWD}/${_AVD_VENV}
     echo "    * Standard requirements installation from ${_AVD_REQUIREMENTS_URL}"
     ${_AVD_VENV}/bin/pip install ${_PIP_OPTIONS} -r /tmp/requirements.txt
