@@ -29,7 +29,7 @@ _LOCAL_CVP="${_ROOT_INSTALLATION_DIR}/ansible-cvp"
 _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/avd-atd-provisionner"
 
 # BIN Paths
-_PIP_BIN=$(which pip)
+_PIP_BIN=$(which pip3)
 _PIP_OPTIONS="--disable-pip-version-check --quiet --upgrade --use-feature=2020-resolver"
 _CURL_BIN=$(which curl)
 _CURL_OPTIONS="-fsSL"
