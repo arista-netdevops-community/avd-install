@@ -30,7 +30,9 @@ _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/avd-atd-provisionner"
 
 # BIN Paths
 _PIP_BIN=$(which pip3)
-_PIP_OPTIONS="--user --disable-pip-version-check --quiet --upgrade --use-feature=2020-resolver"
+# For SSH jumphost
+#_PIP_OPTIONS="--disable-pip-version-check --quiet --upgrade --use-feature=2020-resolver"
+_PIP_OPTIONS="--user --disable-pip-version-check --quiet --upgrade"
 _CURL_BIN=$(which curl)
 _CURL_OPTIONS="-fsSL"
 
