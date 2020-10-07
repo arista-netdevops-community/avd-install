@@ -21,12 +21,12 @@ _ROOT_INSTALLATION_DIR="${PWD}/${_INSTALLATION_PATH}"
 # List of Arista Repositories
 _REPO_AVD="https://github.com/aristanetworks/ansible-avd.git"
 _REPO_CVP="https://github.com/aristanetworks/ansible-cvp.git"
-_REPO_EXAMPLES="https://github.com/titom73/avd-atd-provisionner"
+_REPO_EXAMPLES="https://github.com/arista-netdevops-community/atd-avd.git"
 
 # Path for local repositories
 _LOCAL_AVD="${_ROOT_INSTALLATION_DIR}/ansible-avd"
 _LOCAL_CVP="${_ROOT_INSTALLATION_DIR}/ansible-cvp"
-_LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/avd-atd-provisionner"
+_LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/atd-avd"
 
 # BIN Paths
 _PIP_BIN=$(which pip3)
