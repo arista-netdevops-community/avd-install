@@ -26,7 +26,7 @@ _REPO_EXAMPLES="https://github.com/arista-netdevops-community/ansible-cvp-avd-to
 # Path for local repositories
 _LOCAL_AVD="${_ROOT_INSTALLATION_DIR}/ansible-avd"
 _LOCAL_CVP="${_ROOT_INSTALLATION_DIR}/ansible-cvp"
-_LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/ansible-avd-cloudvision-demo"
+_LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/ansible-cvp-avd-toi"
 
 # BIN Paths
 _PIP_BIN=$(which pip)
