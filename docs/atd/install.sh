@@ -4,8 +4,8 @@
 #          Available using curl -fsSL https://get.avd.sh/atd/install.sh | sh
 # Author: @titom73
 # Date: 2020-09-17
-# Update: 2020-10-07
-# Version: 1.0
+# Update: 2021-01-07
+# Version: 1.1
 # License: Apache 2.0
 # --------------------------------------
 
@@ -39,7 +39,7 @@ info_installation_done() {
     echo "   < start playing with AVD content >"
     echo "--------------------------------------"
     echo ""
-    echo "For complete documentaiton, visit: ttps://github.com/arista-netdevops-community/atd-avd"
+    echo "For complete documentaiton, visit: https://github.com/arista-netdevops-community/atd-avd"
     echo ""
 }
 
