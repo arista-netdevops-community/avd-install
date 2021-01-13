@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Purpose: AVD Installation script
-# Available using curl -fsSL https://get.avd.sh/atd/install.sh | sh
+#          Available using curl -fsSL https://get.avd.sh/atd/install.sh | sh
 # Author: @titom73
 # Date: 2020-09-17
 # Update: 2021-01-13
@@ -32,57 +32,55 @@ _LOCAL_CVP="${_ROOT_INSTALLATION_DIR}/ansible-cvp"
 _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/atd-avd"
 
 # Get latest stable version from github
-_AVD_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective}
-https://github.com/aristanetworks/ansible-avd/releases/latest | cut -d "/" -f 8)
-_CVP_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective}
-https://github.com/aristanetworks/ansible-cvp/releases/latest | cut -d "/" -f 8)
+_AVD_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-avd/releases/latest | cut -d "/" -f 8)
+_CVP_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-cvp/releases/latest | cut -d "/" -f 8)
 
 # Print post-installation instructions
 info_installation_done() {
-echo ""
-echo "Installtion done."
-echo ""
-echo "You can access setup at ${_ROOT_INSTALLATION_DIR} to review all the files: collections and playbooks"
-echo "You can login to AVD environment with:"
-echo "--------------------------------------"
-echo " cd ${_LOCAL_EXAMPLES}"
-echo " < start playing with AVD content>"
+    echo ""
+    echo "Installtion done."
+    echo ""
+    echo "You can access setup at ${_ROOT_INSTALLATION_DIR} to review all the files: collections and playbooks"
+    echo "You can login to AVD environment with:"
+    echo "--------------------------------------"
+    echo "   cd ${_LOCAL_EXAMPLES}"
+    echo "   < start playing with AVD content >"
     echo "--------------------------------------"
     echo ""
     echo "For complete documentaiton, visit: https://github.com/arista-netdevops-community/atd-avd"
     echo ""
-    }
+}
 
 
-    ##############################################
-    # Main content for script
-    ##############################################
+##############################################
+# Main content for script
+##############################################
 
-    echo "Arista Ansible AVD installation is starting"
+echo "Arista Ansible AVD installation is starting"
 
-    # Test if git is installed
-    if hash git 2>/dev/null; then
-    echo " * git has been found here: " $(which git)
-    else
-    echo " ! git is not installed, installation aborted"
+# Test if git is installed
+if hash git 2>/dev/null; then
+    echo "  * git has been found here: " $(which git)
+else
+    echo "  ! git is not installed, installation aborted"
     exit 1
-    fi
+fi
 
-    echo " * Deployed AVD environment"
-    if [ ! -d "${_ROOT_INSTALLATION_DIR}" ]; then
-    echo " * creating local installation folder: ${_ROOT_INSTALLATION_DIR}"
+echo "  * Deployed AVD environment"
+if [ ! -d "${_ROOT_INSTALLATION_DIR}" ]; then
+    echo "  * creating local installation folder: ${_ROOT_INSTALLATION_DIR}"
     mkdir -p ${_ROOT_INSTALLATION_DIR}
-    echo " * cloning ansible-avd collections (${_AVD_VERSION}) to ${_LOCAL_AVD}"
+    echo "  * cloning ansible-avd collections (${_AVD_VERSION}) to ${_LOCAL_AVD}"
     ${_GIT} clone --depth 1 --branch ${_AVD_VERSION} ${_REPO_AVD} ${_LOCAL_AVD} > /dev/null 2>&1
-    echo " * cloning ansible-cvp collections (${_CVP_VERSION}) to ${_LOCAL_CVP}"
+    echo "  * cloning ansible-cvp collections (${_CVP_VERSION}) to ${_LOCAL_CVP}"
     ${_GIT} clone --depth 1 --branch ${_CVP_VERSION} ${_REPO_CVP} ${_LOCAL_CVP} > /dev/null 2>&1
-    echo " * cloning netdevops-examples collections to ${_LOCAL_EXAMPLES}"
+    echo "  * cloning netdevops-examples collections to ${_LOCAL_EXAMPLES}"
     ${_GIT} clone ${_REPO_EXAMPLES} ${_LOCAL_EXAMPLES} > /dev/null 2>&1
 
     # Placeholder for specific ATD repos where we can position some topologies
 
     info_installation_done
-    else
-    echo " ! local installation folder already exists - ${_ROOT_INSTALLATION_DIR}"
+else
+    echo "  ! local installation folder already exists - ${_ROOT_INSTALLATION_DIR}"
     exit 1
-    fi
+fi

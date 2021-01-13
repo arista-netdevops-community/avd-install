@@ -19,12 +19,13 @@ jobs:
       - name: Install and Build
         run: |
           cp install.sh docs/index.html
+          unalias cp && for i in $(ls **/install.sh); do cp -r "$i" $(dirname ${i})/index.html; done;
 
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "Deploy new version of installation script woth CI" -a
+          git commit -m "Deploy new version of installation script with CI" -a
 
       - name: Push changes
         uses: ad-m/github-push-action@master
