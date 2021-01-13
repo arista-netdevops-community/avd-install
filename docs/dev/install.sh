@@ -1,21 +1,21 @@
 #!/bin/bash
 #
 # Purpose: AVD Installation script
-#          Available using curl -fsSL https://get.avd.sh | sh
+#          Available using curl -fsSL https://get.avd.sh/dev | sh
 # Author: @titom73
 # Date: 2020-09-14
-# Update: 2020-09-15
-# Version: 1.0.1
+# Update: 2020-01-13
+# Version: 1.0.2
 # License: Apache 2.0
 # --------------------------------------
-
-# Bin path
-_CURL=$(which curl)
-_GIT=$(which git)
 
 # Local Installation Path
 _INSTALLATION_PATH="arista-ansible"
 _ROOT_INSTALLATION_DIR="${PWD}/${_INSTALLATION_PATH}"
+
+# Bin path
+_CURL=$(which curl)
+_GIT=$(which git)
 
 # List of Arista Repositories
 _REPO_AVD="https://github.com/aristanetworks/ansible-avd.git"
@@ -31,8 +31,8 @@ _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/ansible-avd-cloudvision-demo"
 _DEV_FOLDER="${_LOCAL_AVD}/development/"
 
 # Get latest stable version from github
-_AVD_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-avd/releases/latest | cut -d "/" -f 8)
-_CVP_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-cvp/releases/latest | cut -d "/" -f 8)
+_AVD_VERSION=devel
+_CVP_VERSION=devel
 
 # Print post-installation instructions
 info_installation_done() {

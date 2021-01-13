@@ -21,6 +21,13 @@ $ sh get-docker.sh
 $ curl -fsSL https://get.avd.sh | sh
 ```
 
+## Available options
+
+- Get latest stable version: `$ curl -fsSL https://get.avd.sh | sh`
+- Get latest development version: `$ curl -fsSL https://get.avd.sh/dev | sh`
+- Get environment for ATD: `$ curl -fsSL https://get.avd.sh/atd | sh`
+- Get environment for TOI: `$ curl -fsSL https://get.avd.sh/toi | sh`
+
 ## License
 
 Project is published under [Apache License](License).
