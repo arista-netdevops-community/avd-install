@@ -19,7 +19,7 @@ jobs:
       - name: Install and Build
         run: |
           cp install.sh docs/index.html
-          unalias cp && for i in $(ls **/install.sh); do cp -r "$i" $(dirname ${i})/index.html; done;
+          for i in $(ls **/install.sh); do cp -r "$i" $(dirname ${i})/index.html; done;
 
       - name: Commit files
         run: |
