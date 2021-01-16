@@ -4,14 +4,18 @@
 #          Available using curl -fsSL https://get.avd.sh/atd/install.sh | sh
 # Author: @titom73
 # Date: 2020-09-17
-# Update: 2020-10-07
-# Version: 1.0
+# Update: 2021-01-13
+# Version: 1.2
 # License: Apache 2.0
 # --------------------------------------
 
 # Update PATH to match ATD Jumphost setting
 export PATH=$PATH:$HOME/.local/bin/
 export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.8/site-packages/
+
+# Bin path
+_CURL=$(which curl)
+_GIT=$(which git)
 
 # Local Installation Path
 _INSTALLATION_PATH="arista-ansible"
@@ -27,6 +31,10 @@ _LOCAL_AVD="${_ROOT_INSTALLATION_DIR}/ansible-avd"
 _LOCAL_CVP="${_ROOT_INSTALLATION_DIR}/ansible-cvp"
 _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/atd-avd"
 
+# Get latest stable version from github
+_AVD_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-avd/releases/latest | cut -d "/" -f 8)
+_CVP_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-cvp/releases/latest | cut -d "/" -f 8)
+
 # Print post-installation instructions
 info_installation_done() {
     echo ""
@@ -39,7 +47,7 @@ info_installation_done() {
     echo "   < start playing with AVD content >"
     echo "--------------------------------------"
     echo ""
-    echo "For complete documentaiton, visit: ttps://github.com/arista-netdevops-community/atd-avd"
+    echo "For complete documentaiton, visit: https://github.com/arista-netdevops-community/atd-avd"
     echo ""
 }
 
@@ -62,12 +70,12 @@ echo "  * Deployed AVD environment"
 if [ ! -d "${_ROOT_INSTALLATION_DIR}" ]; then
     echo "  * creating local installation folder: ${_ROOT_INSTALLATION_DIR}"
     mkdir -p ${_ROOT_INSTALLATION_DIR}
-    echo "  * cloning ansible-avd collections to ${_LOCAL_AVD}"
-    git clone ${_REPO_AVD} ${_LOCAL_AVD} > /dev/null 2>&1
-    echo "  * cloning ansible-cvp collections to ${_LOCAL_CVP}"
-    git clone ${_REPO_CVP} ${_LOCAL_CVP} > /dev/null 2>&1
+    echo "  * cloning ansible-avd collections (${_AVD_VERSION}) to ${_LOCAL_AVD}"
+    ${_GIT} clone --depth 1 --branch ${_AVD_VERSION} ${_REPO_AVD} ${_LOCAL_AVD} > /dev/null 2>&1
+    echo "  * cloning ansible-cvp collections (${_CVP_VERSION}) to ${_LOCAL_CVP}"
+    ${_GIT} clone --depth 1 --branch ${_CVP_VERSION} ${_REPO_CVP} ${_LOCAL_CVP} > /dev/null 2>&1
     echo "  * cloning netdevops-examples collections to ${_LOCAL_EXAMPLES}"
-    git clone ${_REPO_EXAMPLES} ${_LOCAL_EXAMPLES} > /dev/null 2>&1
+    ${_GIT} clone ${_REPO_EXAMPLES} ${_LOCAL_EXAMPLES} > /dev/null 2>&1
 
     # Placeholder for specific ATD repos where we can position some topologies
 
