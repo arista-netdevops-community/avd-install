@@ -18,7 +18,7 @@ _CURL=$(which curl)
 _GIT=$(which git)
 
 # Local Installation Path
-_INSTALLATION_PATH="arista-ansible"
+_INSTALLATION_PATH="labfiles/arista-ansible"
 _ROOT_INSTALLATION_DIR="${PWD}/${_INSTALLATION_PATH}"
 
 # List of Arista Repositories
