@@ -32,8 +32,12 @@ _LOCAL_CVP="${_ROOT_INSTALLATION_DIR}/ansible-cvp"
 _LOCAL_EXAMPLES="${_ROOT_INSTALLATION_DIR}/atd-avd"
 
 # Get latest stable version from github
-_AVD_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-avd/releases/latest | cut -d "/" -f 8)
-_CVP_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-cvp/releases/latest | cut -d "/" -f 8)
+# Automatic detection from Github
+# _AVD_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-avd/releases/latest | cut -d "/" -f 8)
+# _CVP_VERSION=$(curl -L -I -s -o /dev/null -w %{url_effective} https://github.com/aristanetworks/ansible-cvp/releases/latest | cut -d "/" -f 8)
+# Static configuration
+_AVD_VERSION=v2.2.1
+_CVP_VERSION=v3.1.0
 
 # Print post-installation instructions
 info_installation_done() {
