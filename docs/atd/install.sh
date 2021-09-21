@@ -78,10 +78,17 @@ if [ ! -d "${_ROOT_INSTALLATION_DIR}" ]; then
     ${_GIT} clone --depth 1 --branch ${_AVD_VERSION} ${_REPO_AVD} ${_LOCAL_AVD} > /dev/null 2>&1
     echo "  * cloning ansible-cvp collections (${_CVP_VERSION}) to ${_LOCAL_CVP}"
     ${_GIT} clone --depth 1 --branch ${_CVP_VERSION} ${_REPO_CVP} ${_LOCAL_CVP} > /dev/null 2>&1
-    echo "  * cloning netdevops-examples collections to ${_LOCAL_EXAMPLES}"
+    echo "  * cloning atd-avd demo to ${_LOCAL_EXAMPLES}"
     ${_GIT} clone ${_REPO_EXAMPLES} ${_LOCAL_EXAMPLES} > /dev/null 2>&1
 
     # Placeholder for specific ATD repos where we can position some topologies
+
+    if [ -f "${_LOCAL_EXAMPLES}/requirements.txt" ]; then
+        echo "Found custom requirements, installing ..."
+        pip install --upgrade ${_LOCAL_EXAMPLES}/requirements.txt
+    else
+        echo "ATD demo has no custom requirements, skipped"
+    fi
 
     info_installation_done
 else
