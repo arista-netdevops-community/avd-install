@@ -85,7 +85,7 @@ if [ ! -d "${_ROOT_INSTALLATION_DIR}" ]; then
 
     if [ -f "${_LOCAL_EXAMPLES}/requirements.txt" ]; then
         echo "Found custom requirements, installing ..."
-        pip install --upgrade ${_LOCAL_EXAMPLES}/requirements.txt
+        pip install --upgrade -r ${_LOCAL_EXAMPLES}/requirements.txt
     else
         echo "ATD demo has no custom requirements, skipped"
     fi
