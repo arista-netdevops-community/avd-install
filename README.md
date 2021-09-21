@@ -28,6 +28,16 @@ $ curl -fsSL https://get.avd.sh | sh
 - Get environment for ATD: `$ curl -fsSL https://get.avd.sh/atd | sh`
 - Get environment for TOI: `$ curl -fsSL https://get.avd.sh/toi | sh`
 
+## Local testing
+
+```bash
+docker build -t atd_test:latest .
+docker run --rm -i -t atd_test generic
+docker run --rm -i -t atd_test atd
+docker run --rm -i -t atd_test toi
+docker run --rm -i -t atd_test dev
+```
+
 ## License
 
 Project is published under [Apache License](License).

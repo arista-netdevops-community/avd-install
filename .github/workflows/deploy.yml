@@ -16,6 +16,14 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Test scenarios
+        run: |
+          docker build -t atd_test:latest .
+          docker run --rm -i -t atd_test generic
+          docker run --rm -i -t atd_test atd
+          docker run --rm -i -t atd_test toi
+          docker run --rm -i -t atd_test dev
+
       - name: Install and Build
         run: |
           cp install.sh docs/index.html
