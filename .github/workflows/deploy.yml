@@ -19,10 +19,10 @@ jobs:
       - name: Test scenarios
         run: |
           docker build -t atd_test:latest .
-          docker run --rm -i -t atd_test generic
-          docker run --rm -i -t atd_test atd
-          docker run --rm -i -t atd_test toi
-          docker run --rm -i -t atd_test dev
+          docker run --rm -t atd_test generic
+          docker run --rm -t atd_test atd
+          docker run --rm -t atd_test toi
+          docker run --rm -t atd_test dev
 
       - name: Install and Build
         run: |
