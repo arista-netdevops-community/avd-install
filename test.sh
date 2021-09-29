@@ -13,7 +13,7 @@ case $usecase in
         ;;
 
     *)
-        echo "Test ATD installer"
+        echo "Test AVD installer"
         mkdir $usecase
         cd $usecase
         sh ../docs/$usecase/install.sh
