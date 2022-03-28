@@ -42,7 +42,7 @@ _CVP_VERSION=v3.2.0
 # Print post-installation instructions
 info_installation_done() {
     echo ""
-    echo "Installtion done."
+    echo "Installation done."
     echo ""
     echo "You can access setup at ${_ROOT_INSTALLATION_DIR} to review all the files: collections and playbooks"
     echo "You can login to AVD environment with:"
