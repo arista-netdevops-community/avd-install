@@ -62,7 +62,7 @@ info_installation_done() {
     echo "   < start playing with AVD content >"
     echo "--------------------------------------"
     echo ""
-    echo "For complete documentaiton, visit: https://www.avd.sh/docs/installation/setup-environement/"
+    echo "For complete documentation, visit: https://www.avd.sh/docs/installation/setup-environement/"
     echo ""
 }
 

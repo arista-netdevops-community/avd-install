@@ -46,7 +46,7 @@ info_installation_done() {
     echo "   make start"
     echo "--------------------------------------"
     echo ""
-    echo "For complete documentaiton, visit: https://www.avd.sh/en/latest/docs/installation/setup-environment/"
+    echo "For complete documentation, visit: https://www.avd.sh/en/latest/docs/installation/setup-environment/"
     echo ""
 }
 

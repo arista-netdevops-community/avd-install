@@ -51,7 +51,7 @@ info_installation_done() {
     echo "   < start playing with AVD content >"
     echo "--------------------------------------"
     echo ""
-    echo "For complete documentaiton, visit: https://github.com/arista-netdevops-community/atd-avd"
+    echo "For complete documentation, visit: https://github.com/arista-netdevops-community/atd-avd"
     echo ""
 }
 
