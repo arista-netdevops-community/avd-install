@@ -52,7 +52,7 @@ _DEV_FOLDER="${_LOCAL_AVD}/development/"
 # Print post-installation instructions
 info_installation_done() {
     echo ""
-    echo "Installtion done."
+    echo "Installation done."
     echo ""
     echo "You can access setup at ${_ROOT_INSTALLATION_DIR} to review all the files"
     echo "You can login to AVD environment with:"
@@ -62,7 +62,7 @@ info_installation_done() {
     echo "   < start playing with AVD content >"
     echo "--------------------------------------"
     echo ""
-    echo "For complete documentaiton, visit: https://www.avd.sh/docs/installation/setup-environement/"
+    echo "For complete documentation, visit: https://www.avd.sh/docs/installation/setup-environement/"
     echo ""
 }
 

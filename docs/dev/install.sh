@@ -37,7 +37,7 @@ _CVP_VERSION=devel
 # Print post-installation instructions
 info_installation_done() {
     echo ""
-    echo "Installtion done."
+    echo "Installation done."
     echo ""
     echo "You can access setup at ${_ROOT_INSTALLATION_DIR} to review all the files"
     echo "You can login to AVD environment with:"
@@ -46,7 +46,7 @@ info_installation_done() {
     echo "   make start"
     echo "--------------------------------------"
     echo ""
-    echo "For complete documentaiton, visit: https://www.avd.sh/docs/installation/setup-environement/"
+    echo "For complete documentation, visit: https://www.avd.sh/docs/installation/setup-environement/"
     echo ""
 }
 
