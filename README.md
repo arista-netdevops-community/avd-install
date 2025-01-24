@@ -1,4 +1,8 @@
 ![Arista AVD](https://img.shields.io/badge/Arista-AVD%20Automation-blue)
+![No Maintenance](https://img.shields.io/maintenance/no/2023.svg)
+
+> [!TIP]
+> Follow the [up-to-date instructions](https://avd.arista.com/stable/docs/installation/collection-installation.html) to install AVD
 
 # avd-install
 
